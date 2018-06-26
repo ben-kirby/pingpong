@@ -22,6 +22,7 @@ var makeList = function(){
 $(document).ready(function(){
 
   $(".number").submit(function(){
+
     var i;
     var input = parseInt($("#numberInput").val());
 
@@ -29,6 +30,7 @@ $(document).ready(function(){
       numbers.push(i+1);
     }
     makeList();
+    $(".list").toggle();
     event.preventDefault();
   });
 });

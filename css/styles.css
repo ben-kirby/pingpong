@@ -1,7 +1,26 @@
+body{
+  background: #e8a87c;
+}
+
 .jumbotron{
+  text-align: center;
+  background-color: #e27d60;
+  color: #88cdca;
+}
+
+.list{
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.number{
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
 
-#list{
-  
+#numberInput{
+  margin-left: auto;
+  margin-right: auto;
 }
