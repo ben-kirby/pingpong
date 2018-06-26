@@ -6,7 +6,7 @@
 
 ## Description
 
-The website will generate a listt from an array based off user input.
+The website will generate a list from an array based off user input.
 
 ## Specifications
 * It can count up to a provided number.
@@ -39,5 +39,5 @@ The website will generate a listt from an array based off user input.
 
 ### License
 
-*Copyright (c) 2018 Ben Kirby* 
+*Copyright (c) 2018 Ben Kirby*
 *This software is licensed under the MIT license.*
