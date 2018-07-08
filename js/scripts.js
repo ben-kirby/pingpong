@@ -1,36 +1,39 @@
+//business logic
 var numbers = [];
-var test;
+var listNumber;
+
 var makeList = function(){
   for (var i = 0; i < numbers.length; i++) {
-    test = numbers[i];
+    listNumber = numbers[i];
 
-    if ((test % 3 === 0) && (test % 5 ===0)) {
+    if ((listNumber % 3 === 0) && (listNumber % 5 ===0)) {
       $("#list").append($("<li>").text("pingpong"));
     }
-    else if (test % 3 === 0) {
+    else if (listNumber % 3 === 0) {
       $("#list").append($("<li>").text("ping"));
     }
-    else if (test % 5 === 0) {
+    else if (listNumber % 5 === 0) {
       $("#list").append($("<li>").text("pong"));
     }
     else {
-      $("#list").append($("<li>").text(test));
+      $("#list").append($("<li>").text(listNumber));
     }
   }
 }
-//----------------------------
-$(document).ready(function(){
 
-  $(".number").submit(function(){
+var outputList = function(){
+    var numberInput = parseInt($("#numberInput").val());
 
-    var i;
-    var input = parseInt($("#numberInput").val());
-
-    for (var i = 0; i < input; i++) {
+    for (var i = 0; i < numberInput; i++) {
       numbers.push(i+1);
     }
     makeList();
     $(".list").toggle();
+}
+//UI Logic
+$(document).ready(function(){
+  $(".number").submit(function(){
+    outputList();
     event.preventDefault();
   });
 });
