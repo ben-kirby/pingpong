@@ -1,22 +1,20 @@
 //business logic
 var numbers = [];
-var listNumber;
 
 var makeList = function(){
   for (var i = 0; i < numbers.length; i++) {
-    listNumber = numbers[i];
 
-    if ((listNumber % 3 === 0) && (listNumber % 5 ===0)) {
+    if ((numbers[i] % 3 === 0) && (numbers[i] % 5 ===0)) {
       $("#list").append($("<li>").text("pingpong"));
     }
-    else if (listNumber % 3 === 0) {
+    else if (numbers[i] % 3 === 0) {
       $("#list").append($("<li>").text("ping"));
     }
-    else if (listNumber % 5 === 0) {
+    else if (numbers[i] % 5 === 0) {
       $("#list").append($("<li>").text("pong"));
     }
     else {
-      $("#list").append($("<li>").text(listNumber));
+      $("#list").append($("<li>").text(numbers[i]));
     }
   }
 }
@@ -29,11 +27,23 @@ var outputList = function(){
     }
     makeList();
     $(".list").toggle();
+    $("#reset").show();
 }
-//UI Logic
+
+var reset = function(){
+  $(".list").hide();
+  numbers = [];
+  $("#list").empty();
+  $("#reset").hide();
+}
+//UI Logic-----------------------------------
 $(document).ready(function(){
   $(".number").submit(function(){
     outputList();
     event.preventDefault();
+  });
+
+  $("#reset").click(function(){
+    reset();
   });
 });
